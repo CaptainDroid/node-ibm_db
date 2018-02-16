@@ -11,7 +11,7 @@ var execSync = require('child_process').execSync;
 var request = require('request');
 
 //IBM provided URL for downloading clidriver.
-var installerURL = 'https://public.dhe.ibm.com/ibmdl/export/pub/software/data/db2/drivers/odbc_cli';
+var installerURL = 'D:\Akash\SOFTWARES\IBM_DB_INSTALLER_URL';
 var license_agreement = '\n\n****************************************\nYou are downloading a package which includes the Node.js module for IBM DB2/Informix.  The module is licensed under the Apache License 2.0. The package also includes IBM ODBC and CLI Driver from IBM, which is automatically downloaded as the node module is installed on your system/device. The license agreement to the IBM ODBC and CLI Driver is available in '+DOWNLOAD_DIR+'   Check for additional dependencies, which may come with their own license agreement(s). Your use of the components of the package and dependencies constitutes your acceptance of their respective license agreements. If you do not accept the terms of any license agreement(s), then delete the relevant component(s) from your device.\n****************************************\n';
 
 var CURRENT_DIR = process.cwd();
@@ -27,6 +27,7 @@ var deleteInstallerFile = false;
  */
 installerURL = process.env.IBM_DB_INSTALLER_URL || installerURL;
 installerURL = installerURL + "/";
+console.log("Installer URL : "+installerURL);
 
 //Function to download clidriver and install node-ibm_db
 var install_node_ibm_db = function(file_url) {
